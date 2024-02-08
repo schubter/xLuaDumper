@@ -56,7 +56,7 @@ int main(int argc, char* argv[])
 
 	auto out = argc >= 4 ? argv[3] : "out.luac";
 	std::ofstream of(out, std::ios::binary | std::ios::binary);
-	if (lua_dump(L, writer, &of, true)) {
+	if (lua_dump(L, writer, &of, false)) {
 		std::cerr << "Failed to dump lua" << std::endl;
 		return EXIT_FAILURE;
 	}
